@@ -356,35 +356,35 @@ SetOutputPath(${OUTPUT_DIR} 0)
 # Post build
 # ==============================================================================
 
-if(UNIX)
-	#hack for unix to rename the output static library. cmake add lib and extenstion as .a, rename it
-	if (NOT APPLE)
-		if (${XMP_BUILD_STATIC})
-			add_custom_command (TARGET ${TARGET_NAME}
-				POST_BUILD
-				COMMAND  mv ${OUTPUT_DIR}/lib${XMPFILES_LIB}.a  ${OUTPUT_DIR}/${XMPFILES_LIB}.ar
-			)
-		else()
-			if((${CMAKE_BUILD_TYPE} MATCHES "Debug") OR (${CMAKE_BUILD_TYPE} MATCHES "debug") )
-				add_custom_command (TARGET ${TARGET_NAME}
-					POST_BUILD
-					COMMAND ls -l ${OUTPUT_DIR}/lib${XMPFILES_LIB}.so
-				)
-			else()
-				add_custom_command (TARGET ${TARGET_NAME}
-					POST_BUILD
-					COMMAND strip ${OUTPUT_DIR}/lib${XMPFILES_LIB}.so
-					COMMAND ls -l ${OUTPUT_DIR}/lib${XMPFILES_LIB}.so
-				)
-			endif()
-		endif()
-	endif()
-
-	
-else()
-	set_target_properties(${TARGET_NAME} PROPERTIES PROJECT_LABEL ${PROJECT_LABEL_STR})
-
-endif()
+#if(UNIX)
+#	#hack for unix to rename the output static library. cmake add lib and extenstion as .a, rename it
+#	if (NOT APPLE)
+#		if (${XMP_BUILD_STATIC})
+#			add_custom_command (TARGET ${TARGET_NAME}
+#				POST_BUILD
+#				COMMAND  mv ${OUTPUT_DIR}/lib${XMPFILES_LIB}.a  ${OUTPUT_DIR}/${XMPFILES_LIB}.ar
+#			)
+#		else()
+#			if((${CMAKE_BUILD_TYPE} MATCHES "Debug") OR (${CMAKE_BUILD_TYPE} MATCHES "debug") )
+#				add_custom_command (TARGET ${TARGET_NAME}
+#					POST_BUILD
+#					COMMAND ls -l ${OUTPUT_DIR}/lib${XMPFILES_LIB}.so
+#				)
+#			else()
+#				add_custom_command (TARGET ${TARGET_NAME}
+#					POST_BUILD
+#					COMMAND strip ${OUTPUT_DIR}/lib${XMPFILES_LIB}.so
+#					COMMAND ls -l ${OUTPUT_DIR}/lib${XMPFILES_LIB}.so
+#				)
+#			endif()
+#		endif()
+#	endif()
+#
+#	
+#else()
+#	set_target_properties(${TARGET_NAME} PROPERTIES PROJECT_LABEL ${PROJECT_LABEL_STR})
+#
+#endif()
 
 message (STATUS "===========================================================================")
 message (STATUS " ${PROJECT_NAME} ")

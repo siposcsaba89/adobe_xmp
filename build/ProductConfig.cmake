@@ -144,7 +144,7 @@ if (UNIX)
 		endif()
 		set(XMP_PLATFORM_VERSION "linux3.10") # add XMP_BUILDMODE_DIR to follow what other platforms do
 
-		add_definitions(-DUNIX_ENV=1)
+		#add_definitions(-DUNIX_ENV=1)
 		# Linux -------------------------------------------
 		set(XMP_PLATFORM_SHORT "linux")
 		#gcc path is not set correctly
@@ -160,7 +160,7 @@ endif()
 
 
 		set(XMP_PLATFORM_LINK "-z defs -Xlinker -Bsymbolic -Wl,--no-undefined  ${XMPCORE_UUIDLIB_PATH} ${XMP_EXTRA_LINK_FLAGS} ${XMP_TOOLCHAIN_LINK_FLAGS} -lrt -ldl -luuid -lpthread ${XMP_GCC_LIBPATH}/libssp.a")
-		set(XMP_SHARED_COMPILE_FLAGS "-Wno-multichar -D_FILE_OFFSET_BITS=64 -funsigned-char  ${XMP_EXTRA_COMPILE_FLAGS} ${XMP_TOOLCHAIN_COMPILE_FLAGS}")
+		set(XMP_SHARED_COMPILE_FLAGS "-DUNIX_ENV=1 -Wno-multichar -D_FILE_OFFSET_BITS=64 -funsigned-char  ${XMP_EXTRA_COMPILE_FLAGS} ${XMP_TOOLCHAIN_COMPILE_FLAGS}")
 		set(XMP_SHARED_COMPILE_DEBUG_FLAGS " ")
 		set(XMP_SHARED_COMPILE_RELEASE_FLAGS "-fwrapv ")
 

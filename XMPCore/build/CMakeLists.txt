@@ -63,7 +63,7 @@ if(UNIX)
 	else(APPLE)
 		# Linux -------------------------------------------
 		if(XMP_BUILD_STATIC)
-			set(XMPCORE_LIB "staticXMPCore")
+			set(XMPCORE_LIB "XMPCoreStatic")
 		else(XMP_BUILD_STATIC)
 			set(XMPCORE_LIB "XMPCore")
 		endif()

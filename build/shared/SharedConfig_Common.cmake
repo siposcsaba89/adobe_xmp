@@ -63,10 +63,10 @@ function(SetupCompilerFlags)
 	if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX)
 	    set(OUTPUT_VARIABLE "")
 		# Execute GCC with the -dumpversion option, to give us a version string
-		execute_process(COMMAND ${CMAKE_CXX_COMPILER} "-dumpversion" OUTPUT_VARIABLE GCC_VERSION_STRING)
-	
+		#execute_process(COMMAND ${CMAKE_CXX_COMPILER} "-dumpversion" OUTPUT_VARIABLE GCC_VERSION_STRING)
+
 		# Match only the major and minor versions of the version string
-		string(REGEX MATCH "[0-9]+.[0-9]+.[0-9]" GCC_MAJOR_MINOR_VERSION_STRING "${GCC_VERSION_STRING}")
+		string(REGEX MATCH "[0-9]+.[0-9]+.[0-9]" GCC_MAJOR_MINOR_VERSION_STRING "${CMAKE_CXX_COMPILER_VERSION}")
 	
 		# Strip out the period between the major and minor versions
 		string(REGEX REPLACE "\\." "" ${COMPONENT}_VERSIONING_GCC_VERSION "${GCC_MAJOR_MINOR_VERSION_STRING}")

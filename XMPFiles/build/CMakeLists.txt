@@ -58,7 +58,7 @@ if(UNIX)
 	else(APPLE)
 		# Linux -------------------------------------------
 		if(XMP_BUILD_STATIC)
-			set(XMPFILES_LIB "staticXMPFiles")
+			set(XMPFILES_LIB "XMPFilesStatic")
 		else()
 			set(XMPFILES_LIB "XMPFiles")
 		endif()
