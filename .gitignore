@@ -1,0 +1,14 @@
+*.lib
+*.obj
+*.depend
+*.tlog
+*.pdb
+*.log
+*.filters
+*.idb
+*.stamp
+*.vcxproj
+XMPCore/build/*.sln
+XMPCore/build/cmake_install.cmake
+XMPFiles/build/*.sln
+XMPFiles/build/cmake_install.cmake

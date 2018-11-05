@@ -281,6 +281,7 @@ endif()
 #install(FILES ${PUBLIC_XMPCORE_SOURCES} DESTINATION include/adobe_xmp/XMPCore/source)
 
 install(DIRECTORY ${XMPROOT_DIR}/public/include/ DESTINATION include/adobe_xmp)
+install(FILES ${XMPROOT_DIR}/third-party/zuid/interfaces/MD5.h DESTINATION include/adobe_xmp)
 install(TARGETS ${TARGET_NAME} EXPORT adobe-xmp-targets DESTINATION 
     ARCHIVE DESTINATION lib LIBRARY DESTINATION lib RUNTIME DESTINATION bin)
 # ==============================================================================
