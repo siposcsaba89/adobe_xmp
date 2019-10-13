@@ -176,7 +176,7 @@ bool P2_Clip::IsTopClip()
 	return IsValidClip() && headContent.topClipId != 0  &&  *(headContent.topClipId) == *(headContent.clipId);
 }
 
-XMP_Uns32 P2_Clip::GetOffsetInShot() 
+XMP_Uns32 P2_Clip::GetOffsetInShot()
 {
 	this->CacheClipContent();
 	return this->headContent.OffsetInShot;
