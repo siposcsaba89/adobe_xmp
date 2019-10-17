@@ -229,13 +229,8 @@ function(AddLibraryAndDependencies targetName staticBuild isFramework sharedOrMo
 	endforeach()
 	
     foreach(dependencyPair ${${dependencyList}})
-        if (${dependencyPair} STREQUAL "zlib")
-            find_package(${dependencyPair} REQUIRED CONFIG)
-            target_link_libraries(${targetName} PUBLIC ::zlibstatic)
-        else()
-            find_package(${dependencyPair} REQUIRED CONFIG)
-            target_link_libraries(${targetName} PUBLIC ::${dependencyPair})
-        endif()
+        find_package(${dependencyPair} REQUIRED)
+        target_link_libraries(${targetName} PUBLIC ${dependencyPair}::${dependencyPair})
         message(STATUS "dependencyPair " ${dependencyPair})
     endforeach()
     
