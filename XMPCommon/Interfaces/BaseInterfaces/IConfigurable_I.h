@@ -23,8 +23,8 @@ namespace XMP_COMPONENT_INT_NAMESPACE {
 	public:
 
 		typedef struct std::pair< eDataType, CombinedDataValue > TypeValuePair;
-		typedef std::pair< uint64, TypeValuePair >	KeyValuePair;
-		typedef std::pair< uint64, eDataType > KeyValueTypePair;
+		typedef std::pair< uint64 const, TypeValuePair >	KeyValuePair;
+		typedef std::pair<const uint64, eDataType > KeyValueTypePair;
 
 		//!
 		//! Function to validate a key.

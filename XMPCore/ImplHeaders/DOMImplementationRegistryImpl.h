@@ -35,8 +35,8 @@ namespace AdobeXMPCore_Int {
 		, public virtual MemoryManagedObject
 	{
 	public:
-		typedef std::map< spcIUTF8String, spcIDOMParser, IUTF8StringComparator, TAllocator< spcIUTF8String > > ParserMap;
-		typedef std::map< spcIUTF8String, spcIDOMSerializer, IUTF8StringComparator, TAllocator< spcIUTF8String > > SerializerMap;
+		typedef std::map< spcIUTF8String, spcIDOMParser, IUTF8StringComparator, TAllocator< std::pair<const spcIUTF8String, spcIDOMParser> > > ParserMap;
+		typedef std::map< spcIUTF8String, spcIDOMSerializer, IUTF8StringComparator, TAllocator< std::pair<const spcIUTF8String, spcIDOMSerializer> > > SerializerMap;
 
 		DOMImplementationRegistryImpl() {}
 

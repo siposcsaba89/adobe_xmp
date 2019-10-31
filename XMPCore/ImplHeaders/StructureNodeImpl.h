@@ -46,7 +46,7 @@ namespace AdobeXMPCore_Int {
 			bool operator()( const QualifiedName & key1, const QualifiedName & key2 ) const;
 		};
 
-		typedef std::map< QualifiedName, spINode, CompareQualifiedName, TAllocator< spINode > > QualifiedNameNodeMap;
+		typedef std::map< QualifiedName, spINode, CompareQualifiedName, TAllocator< std::pair<const QualifiedName, spINode > > > QualifiedNameNodeMap;
 		
 		StructureNodeImpl( const char * nameSpace, sizet nameSpaceLength, const char * name, sizet nameLength );
 		using IStructureNode_I::GetNode;
