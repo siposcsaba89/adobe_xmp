@@ -34,6 +34,7 @@ endif()
 # Globals
 # ==============================================================================
 
+
 set(XMP_ROOT ${PROJECT_SOURCE_DIR}/..)
 
 # ==============================================================================
@@ -70,8 +71,8 @@ include(${XMP_ROOT}/build/XMP_Config.cmake)
 # ==============================================================================
 # Sub projects
 # ==============================================================================
-add_subdirectory(${XMP_ROOT}/XMPCore/build ${XMP_ROOT}/XMPCore/build/${XMP_CMAKEFOLDER_NAME})
-add_subdirectory(${XMP_ROOT}/XMPFiles/build ${XMP_ROOT}/XMPFiles/build/${XMP_CMAKEFOLDER_NAME})
+add_subdirectory(${XMP_ROOT}/XMPCore/build ${CMAKE_CURRENT_BINARY_DIR}/XMPCore/build/${XMP_CMAKEFOLDER_NAME})
+add_subdirectory(${XMP_ROOT}/XMPFiles/build ${CMAKE_CURRENT_BINARY_DIR}/XMPFiles/build/${XMP_CMAKEFOLDER_NAME})
 
 install(EXPORT adobe-xmp-targets NAMESPACE :: DESTINATION lib/cmake/adobe-xmp)
 configure_file(cmake/adobe-xmp-config.cmake.in adobe-xmp-config.cmake @ONLY)
@@ -79,6 +80,8 @@ install(FILES
         ${CMAKE_CURRENT_BINARY_DIR}/adobe-xmp-config.cmake 
     DESTINATION 
         lib/cmake/adobe-xmp)
+
+
 
 # ==============================================================================
 # configuration feedback
