@@ -286,7 +286,7 @@ install(TARGETS ${TARGET_NAME} EXPORT adobe-xmp-targets DESTINATION
     ARCHIVE DESTINATION lib LIBRARY DESTINATION lib RUNTIME DESTINATION bin)
 # ==============================================================================
 # Define output
-SetOutputPath(${OUTPUT_DIR} 0)
+#SetOutputPath(${OUTPUT_DIR} 0)
 
 # ==============================================================================
 # Post build

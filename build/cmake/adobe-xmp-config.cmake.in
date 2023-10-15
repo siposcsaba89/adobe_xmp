@@ -1,4 +1,4 @@
 include(CMakeFindDependencyMacro)
-find_dependency(zlib CONFIG)
+find_dependency(ZLIB)
 find_dependency(expat CONFIG)
 include(${CMAKE_CURRENT_LIST_DIR}/adobe-xmp-targets.cmake)

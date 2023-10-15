@@ -273,7 +273,7 @@ else ()
 endif()
 
 set(DEPENDENCY_LIST "")
-list(APPEND DEPENDENCY_LIST expat zlib)
+list(APPEND DEPENDENCY_LIST expat ZLIB)
 
 AddLibraryAndDependencies(${TARGET_NAME} ${XMP_BUILD_STATIC} YES "SHARED" SOURCE_FILES DEPENDENCY_LIST)
 target_link_libraries(${TARGET_NAME}
@@ -350,7 +350,7 @@ install(TARGETS ${TARGET_NAME} EXPORT adobe-xmp-targets DESTINATION
 
 # ==============================================================================
 # Define output for this project
-SetOutputPath(${OUTPUT_DIR} 0)
+#SetOutputPath(${OUTPUT_DIR} 0)
 
 # ==============================================================================
 # Post build
